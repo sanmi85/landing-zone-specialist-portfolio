@@ -1,0 +1,15 @@
+{
+    "Quota": {
+        "ServiceCode": "vpc",
+        "ServiceName": "Amazon Virtual Private Cloud (Amazon VPC)",
+        "QuotaArn": "arn:aws:servicequotas:us-east-2:654654245415:vpc/L-F678F1CE",
+        "QuotaCode": "L-F678F1CE",
+        "QuotaName": "VPCs per Region",
+        "Value": 5.0,
+        "Unit": "None",
+        "Adjustable": true,
+        "GlobalQuota": false,
+        "QuotaAppliedAtLevel": "ACCOUNT",
+        "Description": "The maximum number of VPCs per Region. This quota is directly tied to the maximum number of internet gateways per Region."
+    }
+}
