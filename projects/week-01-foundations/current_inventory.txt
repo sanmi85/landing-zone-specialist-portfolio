@@ -10,3 +10,15 @@ Conclusion - The query worked but there was no data to retrieve
 aws ec2 describe-instances \ --query 'Reservations[*].Instances[*].{ID:InstanceId,Type:InstanceType,State:State.Name}' \
 --output table > current_inventory.txt
 aws ec2 describe-instances --output json
+
+
+
+
+
+## Current Inventory
+
+**Purpose:** To document the current inventory of cloud resources within the organization.
+
+This includes identifying the number and types of resources currently deployed, such as VPCs, compute instances, networking components, and other infrastructure elements.
+
+Example: The organization currently operates approximately 50 VPCs across its cloud environment.

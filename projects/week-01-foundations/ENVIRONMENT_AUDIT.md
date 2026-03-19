@@ -17,3 +17,11 @@ Current VPC Quota for us-east-2: **5.0**
 1. Distributing workloads across multiple accounts avoids service quota limitations and enables the organization to scale infrastructure such as VPCs and networking components more effectively.
 2. Separate accounts provide clear security boundaries between workloads and environments, reducing blast radius and helping meet compliance and regulatory expectations.
 3. Segmenting workloads across accounts improves visibility, access control, monitoring, and resource ownership while enabling centralized governance through Organizational Units (OUs) and Service Control Policies (SCPs).
+
+
+
+## Purpose
+
+The purpose of the environment audit is to identify the problems and limitations in the current cloud environment that the landing zone architecture is intended to address.
+
+Understanding the current state of the environment is essential for designing a scalable, secure, and well-governed cloud architecture.

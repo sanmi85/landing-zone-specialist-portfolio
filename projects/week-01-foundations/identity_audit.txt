@@ -15,3 +15,11 @@ POLICIES:
         }
     ]
 }
+
+
+
+## Purpose
+
+The purpose of an identity audit is to evaluate the current Identity and Access Management (IAM) architecture in order to identify security risks, 
+misconfigurations, and governance gaps.This includes reviewing who has access to cloud resources, what permissions and authorizations have been granted,
+ and whether access controls follow the principle of least privilege.
