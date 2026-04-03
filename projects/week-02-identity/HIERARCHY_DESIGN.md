@@ -42,27 +42,27 @@ Accounts hosting business applications and services.
 
 ## Visual 3 level diagram
 
-TRED Organization
-│
+ROOT
 ├── Security OU
-│   ├── Identity Management Account
-│   ├── Security Tooling Account
-│   └── Log Archive Account
-│
-├── Core OU
-│   ├── Networking Account
-│   ├── Shared Services Account
-│   └── Platform Automation Account
-│
+│   └──(Future: Audit & Log Accounts)
 └── Workloads OU
-    ├── Dev-HR
-    ├── Dev-Finance
-    ├── Dev-Engineering
-    │
-    ├── UAT-HR
-    ├── UAT-Finance
-    ├── UAT-Engineering
-    │
-    ├── Prod-HR
-    ├── Prod-Finance
-    └── Prod-Engineering
+    ├── [Development] (OU) <-- Nested Child
+    │    └── (Future: Sandbox & Dev Accounts)
+    └── [Production]  (OU) <-- Nested Child
+        └── (Future: High-Availability Apps)
+
+    {
+    "OrganizationalUnits": [
+        {
+            "Id": "ou-xxaz-0eecost1",
+            "Arn": "arn:aws:organizations::654654245415:ou/o-0scg53y7o1/ou-xxaz-0eecost1",
+            "Name": "Production"
+        },
+        {
+            "Id": "ou-xxaz-ff4ilnjr",
+            "Arn": "arn:aws:organizations::654654245415:ou/o-0scg53y7o1/ou-xxaz-ff4ilnjr",
+            "Name": "Development"
+        }
+    ]
+}
+~

@@ -12,7 +12,7 @@ terraform {
 }
 
 
-# 3. Data Source: Fetching the current Org info
+# Level 0: Fetch the Organization Root (Top of the tree)
 data "aws_organizations_organization" "org" {}
 
 output "org_id" {
@@ -20,7 +20,7 @@ output "org_id" {
 }
 
 
-
+# Level 1: Create the Parent OUs
 # 2. Create the Security OU
 resource "aws_organizations_organizational_unit" "security" {
   name      = "Security"
@@ -31,4 +31,17 @@ resource "aws_organizations_organizational_unit" "security" {
 resource "aws_organizations_organizational_unit" "workloads" {
   name      = "Workloads"
   parent_id = data.aws_organizations_organization.org.roots[0].id
+}
+
+# Level 2: Create Nested Child OUs
+# Notice: The parent_id points to the Workloads OU, NOT the Root.
+
+resource "aws_organizations_organizational_unit" "development" {
+  name      = "Development"
+  parent_id = aws_organizations_organizational_unit.workloads.id
+}
+
+resource "aws_organizations_organizational_unit" "production" {
+  name      = "Production"
+  parent_id = aws_organizations_organizational_unit.workloads.id
 }
