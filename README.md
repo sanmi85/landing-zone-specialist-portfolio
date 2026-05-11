@@ -1,57 +1,63 @@
-# Enterprise Landing Zone Architecture Portfolio
-
-## Project Information
-
-**Project:** Enterprise AWS Landing Zone Architecture  
-**Author:** Olu Thompson  
-**Date:** March 2026  
-**Type:** Cloud Architecture Portfolio Project
-
-## Tech Stack
-
-- **Cloud Platform:** AWS
-- **Identity & Access:** AWS IAM, AWS Identity Center
-- **Security & Monitoring:** AWS CloudTrail, AWS GuardDuty
-- **Infrastructure:** Amazon VPC
-- **Governance:** AWS Organizations, Service Control Policies (SCPs)
+# Landing Zone Specialist Portfolio
 
 ## Overview
 
-This project demonstrates the design of an enterprise-scale AWS Landing Zone that supports secure, scalable, and well-governed cloud environments.
+This repository documents my hands-on work building cloud landing zone components using AWS, Terraform, and security architecture principles.
 
-The architecture addresses common enterprise challenges such as:
+The goal of this portfolio is to demonstrate practical experience with identity, governance, networking, shared services, centralized logging, and secure multi-account design.
 
-- Cloud service quota limitations
-- Compliance and regulatory requirements
-- Security isolation between environments
-- Governance and operational management at scale
-
-The proposed solution uses a **multi-account landing zone architecture** built with AWS Organizations to distribute workloads across multiple accounts and enforce governance through Organizational Units (OUs) and Service Control Policies (SCPs).
+---
 
 ## Architecture Goals
 
-The landing zone design focuses on the following objectives:
+- Build a scalable AWS landing zone foundation
+- Centralize identity and access management
+- Apply governance controls across accounts
+- Design hub-and-spoke networking using Transit Gateway
+- Support centralized logging and monitoring
+- Enable shared services and private connectivity
+- Use Terraform to automate repeatable infrastructure patterns
 
-- **Scalability** – Support dozens of business units and environments
-- **Security Isolation** – Reduce blast radius between workloads
-- **Centralized Governance** – Enforce security policies at the organization and OU level
-- **Operational Efficiency** – Simplify management of cloud environments
+---
 
+## Tools and Technologies
 
-## Organizational Structure
+- AWS
+- Terraform
+- AWS IAM Identity Center / SSO
+- AWS Organizations
+- Service Control Policies
+- Transit Gateway
+- VPC Flow Logs
+- S3
+- VPC Endpoints
+- GitHub
+- Cloudtrail
+- GuardDuty
 
-The architecture uses AWS Organizations to structure accounts into multiple Organizational Units (OUs).
+---
 
-## Overview of TRANSIT GATEWAY
+## Project Structure
 
-The Transit Gateway (TGW) was deployed as the central routing component for the hub-and-spoke network architecture.
+### Week 02 - Identity
+Focused on identity foundations, IAM concepts, and access control patterns.
 
-tgw_id = tgw-050379cb7f2397a4f
+### Week 03 - Governance
+Implemented governance concepts such as AWS Organizations, policies, and SSO configuration.
 
-The TGW enables scalable and centralized connectivity between multiple VPCs and network environments without relying on complex VPC peering.
+### Week 04 - Networking
+Built networking foundations including CIDR planning, Transit Gateway, centralized logging, and VPC Flow Logs.
 
-Purpose
-Centralize network connectivity across hub and spoke environments
-Simplify routing by avoiding many-to-many VPC peering
-Provide a foundation for scalable multi-account networking
-Enable centralized traffic inspection and control
+### Week 05 - Shared Services
+Documented shared subnet tagging standards and explored VPC endpoint service discovery and private connectivity patterns.
+
+### Week 06 - Security
+Implemented centralized logging and monitoring architecture using CloudTrail and GuardDuty to improve visibility, auditing, and security monitoring across environments.
+
+---
+
+## Key Learning
+
+This project shows how landing zone components work together to support scalable, secure, and governed cloud environments.
+
+The focus is not only on deploying infrastructure, but also on understanding the design decisions, trade-offs, and security controls behind the architecture.
