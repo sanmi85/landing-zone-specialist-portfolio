@@ -42,3 +42,16 @@ The landing zone design focuses on the following objectives:
 
 The architecture uses AWS Organizations to structure accounts into multiple Organizational Units (OUs).
 
+## Overview of TRANSIT GATEWAY
+
+The Transit Gateway (TGW) was deployed as the central routing component for the hub-and-spoke network architecture.
+
+tgw_id = tgw-050379cb7f2397a4f
+
+The TGW enables scalable and centralized connectivity between multiple VPCs and network environments without relying on complex VPC peering.
+
+Purpose
+Centralize network connectivity across hub and spoke environments
+Simplify routing by avoiding many-to-many VPC peering
+Provide a foundation for scalable multi-account networking
+Enable centralized traffic inspection and control

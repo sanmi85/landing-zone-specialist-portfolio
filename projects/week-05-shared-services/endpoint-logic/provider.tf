@@ -1,0 +1,2 @@
+resource "aws_vpc_endpoint_service" "app_provider" { acceptance_required = true # Security: You must approve every connection network_load_balancer_arns = [aws_lb.internal_nlb.arn] tags = { Name = "sanmi-private-link" } 
+output "endpoint_service_name" { value = aws_vpc_endpoint_service.app_provider.service_name }

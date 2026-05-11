@@ -1,0 +1,1 @@
+resource "aws_vpc_endpoint" "service_consumer" { vpc_id = aws_vpc.workload_spoke.id service_name = "com.amazonaws.vpce.us-east-1.vpce-svc-xxxxxxxxxxxxxx" # From Task 1 Output vpc_endpoint_type = "Interface" # The 'Doorway' in the consumer's subnet subnet_ids = [aws_subnet.private_spoke.id] security_group_ids = [aws_security_group.endpoint_access.id] private_dns_enabled = true }
