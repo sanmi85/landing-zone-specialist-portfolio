@@ -1,17 +1,18 @@
+data "aws_caller_identity" "current" {}
+
 # Created immutable bucket
 resource "aws_s3_bucket" "audit_logs" {
-    bucket = "sanmi-central-audit-logs-$
-    {data.aws_caller_identity.current.account_id}"
+  bucket = "sanmi-central-audit-logs-${data.aws_caller_identity.current.account_id}"
 
     # To prevent accidental deletion
     lifecycle{ 
-        prevent_destroy = true
+ prevent_destroy = true
     }
 }
 
 # Enabled versioning
 resource "aws_s3_bucket_versioning" "logs_versioning" {
-    bucket = aws_s3_bucket.audit_logs.id
+    bucket = "sanmi-central-audit-logs-${data.aws_caller_identity.current.account_id}"
     versioning_configuration{
         status = "Enabled"
     }
@@ -20,7 +21,7 @@ resource "aws_s3_bucket_versioning" "logs_versioning" {
 # Introduced the specialist policy
 resource "aws_s3_bucket_policy" "allow_org_logs"{
     bucket = aws_s3_bucket.audit_logs.id
-    policy = policy = jsonencode({
+    policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
       {
