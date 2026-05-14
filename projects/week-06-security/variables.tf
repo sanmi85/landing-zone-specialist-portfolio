@@ -16,7 +16,13 @@ variable "organization_id" {
 
 
 variable "aws_region" {
-    description = "The region where security service will be centered"
-    type        = string
-    default     ="us-east-2"
+  description = "The region where security service will be centered"
+  type        = string
+  default     = "us-east-2"
 }
+
+variable "alert_email" {
+  description = "Email address for SNS security alerts"
+  type        = string
+}
+
