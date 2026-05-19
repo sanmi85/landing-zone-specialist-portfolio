@@ -8,3 +8,10 @@ resource "aws_flow_log" "spoke_logs" {
     Name = "spoke-vpc-flow-logs"
   }
 }
+
+resource "aws_flow_log" "spoke_traffic" {
+  log_destination      = "arn:aws:s3:::sanmi-central-audit-logs-654654245415"
+  log_destination_type = "s3"
+  traffic_type         = "ALL"
+  vpc_id               = "vpc-0c80108805bdf5d97"
+}
